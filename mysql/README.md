@@ -1,8 +1,6 @@
-# Collections of SQL Tricks
+# MySQL/MariaDB Tricks
 
-
-[mysql] select last 5 records of each id
-
+select last 5 records of each id
 ```mysql
 WITH ranked_messages AS (
   SELECT m.*, ROW_NUMBER() OVER (PARTITION BY id ORDER BY datetime_col DESC) AS rn

@@ -1,2 +1,4 @@
-# notes
-collections of useful techniques/tricks
+# Collections of Useful Tricks
+
+- python
+- sql
