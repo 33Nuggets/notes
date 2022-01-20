@@ -47,8 +47,20 @@ def f(x):
     d['a_sum'] = x['a'].sum()
     d['a_max'] = x['a'].max()
     d['b_mean'] = x['b'].mean()
-    d['c_d_prodsum'] = (x['c'] * x['d']).sum()
-    return pd.Series(d, index=['a_sum', 'a_max', 'b_mean', 'c_d_prodsum'])
+    d['c_d_prod_sum'] = (x['c'] * x['d']).sum()
+    return pd.Series(d, index=['a_sum', 'a_max', 'b_mean', 'c_d_prod_sum'])
+
+df.groupby('group').apply(f)
+
+"""or even more simplified"""
+
+def f(x):
+    return pd.Series({
+      'a_sum': x['a'].sum(),
+      'a_max': x['a'].max(),
+      'b_mean': x['b'].mean(),
+      'c_d_prod_sum': (x['c'] * x['d']).sum(),
+    })
 
 df.groupby('group').apply(f)
 
