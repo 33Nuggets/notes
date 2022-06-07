@@ -2,6 +2,7 @@
 
 - numpy
 - pandas
+- tensorflow
 
 ## pandas
 
@@ -65,3 +66,15 @@ def f(x):
 df.groupby('group').apply(f)
 
 ```
+
+
+## tensorflow
+
+### faster predicting
+```python
+Model(x)
+# is faster than
+model.predict(x)
+```
+[reference](https://stackoverflow.com/questions/60159714/when-to-use-model-predictx-vs-modelx-in-tensorflow)
+
