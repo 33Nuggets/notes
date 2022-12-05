@@ -33,3 +33,18 @@ select convert('string' using utf8) collate utf8_unicode_ci as column
 from another_table
 ;
 ```
+
+
+### find and delete duplicated records while keeping the last updated records
+```mysql
+delete t1
+from table as t1
+         join table as t2
+where t1.index1 = t2.index1
+  and t1.index2 = t2.index2
+  and t1.updated_at < t2.updated_at
+;
+```
+
+
+
